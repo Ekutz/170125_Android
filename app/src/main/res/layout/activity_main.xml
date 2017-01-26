@@ -22,5 +22,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/commonCaller"
-        android:text="Call the CommonActivity"/>
+        android:text="Call the TransparentActivity"/>
 </RelativeLayout>
