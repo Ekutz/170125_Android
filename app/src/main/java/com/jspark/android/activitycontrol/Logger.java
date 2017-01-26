@@ -10,7 +10,7 @@ import android.util.Log;
  */
 
 public class Logger {
-    public final static boolean DEBUG_MODE = true;//BuildConfig.DEBUG;
+    public final static boolean DEBUG_MODE = true;
 
     /**
      *
