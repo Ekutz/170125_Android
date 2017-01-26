@@ -1,18 +1,29 @@
 package com.jspark.android.activitycontrol;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 public class CommonActivity extends AppCompatActivity {
 
     private static String TAG = "CommonActivity";
+
+    TextView tv1;
+    String getString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common);
 
+        tv1 = (TextView)findViewById(R.id.getTv);
+
         Logger.print("onCrate 시작", TAG);
+        Intent i = getIntent();
+        Bundle bundle = i.getExtras();
+        getString = bundle.getString("data");
+        tv1.setText(getString);
     }
 
     @Override

@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
     Button callCommon, callTrans;
+    EditText edit1_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         callCommon = (Button)findViewById(R.id.commonCaller);
         callTrans = (Button)findViewById(R.id.transCaller);
+        edit1_1 = (EditText)findViewById(R.id.edit1);
 
         callCommon.setOnClickListener(listener);
         callTrans.setOnClickListener(listener);
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.commonCaller :
                     Intent i = new Intent(MainActivity.this, CommonActivity.class);
+                    i.putExtra("data", edit1_1.getText().toString());
                     startActivity(i);
                     break;
                 case R.id.transCaller :
